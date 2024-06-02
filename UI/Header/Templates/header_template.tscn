@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://b8iw18tfae81n"]
+
+[ext_resource type="PackedScene" uid="uid://ksc8jibcq504" path="res://UI/Header/Templates/Components/width_selector_template.tscn" id="1_yacqr"]
+[ext_resource type="PackedScene" uid="uid://bepwn5n0s4gnc" path="res://UI/Header/Templates/Components/random_button_template.tscn" id="2_3o3ev"]
+[ext_resource type="PackedScene" uid="uid://df6txr7b4o0va" path="res://UI/Header/Templates/Components/clear_button_template.tscn" id="3_8ekcy"]
+[ext_resource type="PackedScene" uid="uid://bwoia14ihq04f" path="res://UI/Header/Templates/Components/play_button_template.tscn" id="4_fqb0g"]
+[ext_resource type="PackedScene" uid="uid://dgmopv8pxb32p" path="res://UI/Header/Templates/Components/speed_selector_template.tscn" id="5_l1bge"]
+
+[node name="HeaderTemplate" type="ColorRect"]
+offset_right = 1920.0
+offset_bottom = 80.0
+color = Color(0.113725, 0.113725, 0.113725, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WidthSelectorTemplate" parent="HBoxContainer" instance=ExtResource("1_yacqr")]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="HBoxContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+
+[node name="RandomButtonTemplate" parent="HBoxContainer" instance=ExtResource("2_3o3ev")]
+layout_mode = 2
+
+[node name="Spacer2" type="Control" parent="HBoxContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+
+[node name="ClearButtonTemplate" parent="HBoxContainer" instance=ExtResource("3_8ekcy")]
+layout_mode = 2
+
+[node name="Spacer3" type="Control" parent="HBoxContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+
+[node name="PlayButtonTemplate" parent="HBoxContainer" instance=ExtResource("4_fqb0g")]
+layout_mode = 2
+
+[node name="Spacer4" type="Control" parent="HBoxContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+
+[node name="SpeedSelectorTemplate" parent="HBoxContainer" instance=ExtResource("5_l1bge")]
+layout_mode = 2

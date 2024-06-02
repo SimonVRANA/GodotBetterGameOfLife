@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://df6txr7b4o0va"]
+
+[ext_resource type="Texture2D" uid="uid://ca7vhoysiiowg" path="res://UI/Header/Images/Button/ButtonNormal.png" id="1_4dijw"]
+[ext_resource type="Texture2D" uid="uid://c3bw5vxl0yl0f" path="res://UI/Header/Images/Button/ButtonPressed.png" id="2_2m8yb"]
+[ext_resource type="Texture2D" uid="uid://db4xcre70lvy8" path="res://UI/Header/Images/Button/ButtonHover.png" id="3_35ett"]
+
+[node name="ClearButtonTemplate" type="TextureButton"]
+offset_right = 94.0
+offset_bottom = 27.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("1_4dijw")
+texture_pressed = ExtResource("2_2m8yb")
+texture_hover = ExtResource("3_35ett")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Clear"
