@@ -1,9 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://cehdgeesojld5"]
+[gd_scene load_steps=3 format=3 uid="uid://cehdgeesojld5"]
 
 [ext_resource type="PackedScene" uid="uid://b8iw18tfae81n" path="res://UI/Header/Templates/header_template.tscn" id="1_87ijp"]
+[ext_resource type="PackedScene" uid="uid://dow2nfgwsx33m" path="res://Game/Templates/game_template.tscn" id="2_g01u1"]
 
 [node name="MainScene" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HeaderTemplate" parent="CanvasLayer" instance=ExtResource("1_87ijp")]
+
+[node name="GameTemplate" parent="CanvasLayer" instance=ExtResource("2_g01u1")]
+offset_top = 80.0
+offset_bottom = 0.0
+
+[editable path="CanvasLayer/HeaderTemplate"]
+[editable path="CanvasLayer/HeaderTemplate/HBoxContainer/WidthSelectorTemplate"]
+[editable path="CanvasLayer/HeaderTemplate/HBoxContainer/PlayButtonTemplate"]
+[editable path="CanvasLayer/HeaderTemplate/HBoxContainer/SpeedSelectorTemplate"]

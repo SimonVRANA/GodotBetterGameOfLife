@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://dow2nfgwsx33m"]
+[gd_scene load_steps=2 format=3 uid="uid://dow2nfgwsx33m"]
+
+[ext_resource type="Texture2D" uid="uid://b7bgb7j6i4cd6" path="res://Explorations/TextureStretching/16x9.png" id="1_kqxub"]
 
 [node name="GameTemplate" type="Control"]
 layout_mode = 3
@@ -10,10 +12,12 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="GameTexture" type="TextureRect" parent="."]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("1_kqxub")
 expand_mode = 1
