@@ -11,6 +11,9 @@ public partial class GameController : Node
 	[Export]
 	private Color deadColor;
 
+	[Export]
+	private TextureRect gameTexture;
+
 	private GameModel model;
 
 	// Called when the node enters the scene tree for the first time.
@@ -33,8 +36,17 @@ public partial class GameController : Node
 
 	private void MakeTexture()
 	{
-		model.texture = new Texture2D();
-		model.texture.
+		Image image = Image.Create(model.gridWidth, model.GridHeight, false, Image.Format.Rgb8);
+
+		for (int widthIndex = 0; widthIndex < image.GetWidth(); widthIndex++)
+		{
+			for (int heightIndex = 0; heightIndex < image.GetHeight(); heightIndex++)
+			{
+				image.SetPixel(widthIndex, heightIndex, deadColor);
+			}
+		}
+
+		gameTexture.Texture = ImageTexture.CreateFromImage(image);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -5,8 +5,8 @@ using Godot;
 
 public struct GameModel
 {
-	public uint gridWidth;
-	public readonly uint GridHeight => gridWidth * 9 / 16;
+	public int gridWidth;
+	public readonly int GridHeight => gridWidth * 9 / 16;
 
 	public bool isPlaying;
 
@@ -14,6 +14,4 @@ public struct GameModel
 
 	public Color aliveColor;
 	public Color deadColor;
-
-	public Texture texture;
 }
