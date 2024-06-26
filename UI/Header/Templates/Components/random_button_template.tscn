@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bepwn5n0s4gnc"]
+[gd_scene load_steps=6 format=3 uid="uid://bepwn5n0s4gnc"]
 
 [ext_resource type="Texture2D" uid="uid://ca7vhoysiiowg" path="res://UI/Header/Images/Button/ButtonNormal.png" id="1_kephb"]
 [ext_resource type="Texture2D" uid="uid://c3bw5vxl0yl0f" path="res://UI/Header/Images/Button/ButtonPressed.png" id="2_mwry6"]
 [ext_resource type="Texture2D" uid="uid://db4xcre70lvy8" path="res://UI/Header/Images/Button/ButtonHover.png" id="3_feahw"]
+[ext_resource type="Script" path="res://UI/Header/Scripts/RandomButton.cs" id="4_wp20k"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nr7gg"]
 
@@ -14,6 +15,7 @@ size_flags_vertical = 4
 texture_normal = ExtResource("1_kephb")
 texture_pressed = ExtResource("2_mwry6")
 texture_hover = ExtResource("3_feahw")
+script = ExtResource("4_wp20k")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1

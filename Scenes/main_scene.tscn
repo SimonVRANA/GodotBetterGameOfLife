@@ -1,14 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://cehdgeesojld5"]
+[gd_scene load_steps=5 format=3 uid="uid://cehdgeesojld5"]
 
+[ext_resource type="Script" path="res://Game/Scripts/QuitApp.cs" id="1_3hxjl"]
 [ext_resource type="PackedScene" uid="uid://b8iw18tfae81n" path="res://UI/Header/Templates/header_template.tscn" id="1_87ijp"]
 [ext_resource type="PackedScene" uid="uid://dow2nfgwsx33m" path="res://Game/Templates/game_template.tscn" id="2_0yf0c"]
 [ext_resource type="Script" path="res://Game/Scripts/GameController.cs" id="3_fq2a6"]
 
 [node name="MainScene" type="Node2D"]
+script = ExtResource("1_3hxjl")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HeaderTemplate" parent="CanvasLayer" instance=ExtResource("1_87ijp")]
+
+[node name="SpinBox" parent="CanvasLayer/HeaderTemplate/HBoxContainer/WidthSelectorTemplate" index="1" node_paths=PackedStringArray("gameController")]
+gameController = NodePath("../../../../../GameController")
+
+[node name="RandomButtonTemplate" parent="CanvasLayer/HeaderTemplate/HBoxContainer" index="2" node_paths=PackedStringArray("gameController")]
+gameController = NodePath("../../../../GameController")
+
+[node name="ClearButtonTemplate" parent="CanvasLayer/HeaderTemplate/HBoxContainer" index="4" node_paths=PackedStringArray("gameController")]
+gameController = NodePath("../../../../GameController")
 
 [node name="GameTemplate" parent="." instance=ExtResource("2_0yf0c")]
 offset_top = 80.0
@@ -17,7 +28,10 @@ offset_bottom = 1080.0
 
 [node name="GameController" type="Node" parent="." node_paths=PackedStringArray("gameTexture")]
 script = ExtResource("3_fq2a6")
+aliveColor = Color(1, 0.921569, 0.231373, 1)
+deadColor = Color(0.431373, 0.431373, 0.431373, 1)
 gameTexture = NodePath("../GameTemplate/GameTexture")
 
 [editable path="CanvasLayer/HeaderTemplate"]
+[editable path="CanvasLayer/HeaderTemplate/HBoxContainer/WidthSelectorTemplate"]
 [editable path="GameTemplate"]

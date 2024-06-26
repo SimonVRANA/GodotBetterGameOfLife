@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://ksc8jibcq504"]
+[gd_scene load_steps=2 format=3 uid="uid://ksc8jibcq504"]
+
+[ext_resource type="Script" path="res://UI/Header/Scripts/WidthSelector.cs" id="1_62d8k"]
 
 [node name="WidthSelectorTemplate" type="HBoxContainer"]
 offset_right = 147.0
@@ -16,3 +18,4 @@ min_value = 16.0
 max_value = 1920.0
 step = 16.0
 value = 496.0
+script = ExtResource("1_62d8k")
