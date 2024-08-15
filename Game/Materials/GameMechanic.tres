@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cyk6kwn7flrbs"]
+
+[ext_resource type="Shader" path="res://Game/Shaders/GameMechanics.gdshader" id="1_4vlil"]
+
+[resource]
+shader = ExtResource("1_4vlil")
+shader_parameter/alive_color = Color(1, 0.921569, 0.231373, 1)
+shader_parameter/dead_color = Color(0.431373, 0.431373, 0.431373, 1)
+shader_parameter/applyGameMechanic = true

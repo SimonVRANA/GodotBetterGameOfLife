@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cehdgeesojld5"]
+[gd_scene load_steps=6 format=3 uid="uid://cehdgeesojld5"]
 
 [ext_resource type="Script" path="res://Game/Scripts/QuitApp.cs" id="1_3hxjl"]
 [ext_resource type="PackedScene" uid="uid://b8iw18tfae81n" path="res://UI/Header/Templates/header_template.tscn" id="1_87ijp"]
 [ext_resource type="PackedScene" uid="uid://dow2nfgwsx33m" path="res://Game/Templates/game_template.tscn" id="2_0yf0c"]
 [ext_resource type="Script" path="res://Game/Scripts/GameController.cs" id="3_fq2a6"]
+[ext_resource type="Material" uid="uid://cyk6kwn7flrbs" path="res://Game/Materials/GameMechanic.tres" id="5_6bmnf"]
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource("1_3hxjl")
@@ -26,12 +27,15 @@ offset_top = 80.0
 offset_right = 1920.0
 offset_bottom = 1080.0
 
-[node name="GameController" type="Node" parent="." node_paths=PackedStringArray("gameTexture")]
+[node name="GameController" type="Node" parent="." node_paths=PackedStringArray("gameTexture", "playCheckButton")]
 script = ExtResource("3_fq2a6")
 aliveColor = Color(1, 0.921569, 0.231373, 1)
 deadColor = Color(0.431373, 0.431373, 0.431373, 1)
 gameTexture = NodePath("../GameTemplate/GameTexture")
+gameMechanicShader = ExtResource("5_6bmnf")
+playCheckButton = NodePath("../CanvasLayer/HeaderTemplate/HBoxContainer/PlayButtonTemplate/CheckButton")
 
 [editable path="CanvasLayer/HeaderTemplate"]
 [editable path="CanvasLayer/HeaderTemplate/HBoxContainer/WidthSelectorTemplate"]
+[editable path="CanvasLayer/HeaderTemplate/HBoxContainer/PlayButtonTemplate"]
 [editable path="GameTemplate"]

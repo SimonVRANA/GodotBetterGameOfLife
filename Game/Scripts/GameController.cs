@@ -15,6 +15,12 @@ public partial class GameController : Node
 	[Export]
 	private TextureRect gameTexture;
 
+	[Export]
+	private ShaderMaterial gameMechanicShader;
+
+	[Export]
+	private CheckButton playCheckButton;
+
 	private GameModel model;
 
 	private readonly Random random = new();
@@ -34,7 +40,15 @@ public partial class GameController : Node
 			numberOfFramesBetweenUpdates = 1
 		};
 
+		gameMechanicShader.SetShaderParameter("aliveColor", aliveColor);
+		gameMechanicShader.SetShaderParameter("deadColor", deadColor);
+
 		MakeTexture();
+	}
+
+	public override void _Process(double delta)
+	{
+		ApplyGameMecanicShager(playCheckButton.ButtonPressed);
 	}
 
 	private void MakeTexture()
@@ -52,13 +66,9 @@ public partial class GameController : Node
 		gameTexture.Texture = ImageTexture.CreateFromImage(image);
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
+	private void ApplyGameMecanicShager(bool apply = false)
 	{
-	}
-
-	private void applyGameMecanicShager()
-	{
+		gameMechanicShader.SetShaderParameter("applyGameMechanic", apply);
 	}
 
 	public void RandomizeGrid()
